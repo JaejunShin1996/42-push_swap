@@ -8,7 +8,7 @@ SRCS	= push_swap
 CFILES	= $(SRCS:%=%.c)
 
 $(NAME):
-	$(CC) $(CFLAGS) $(CFILES) -I . -o $(NAME)
+	$(CC) $(CFLAGS) $(CFILES) -L./Libft -lft -I . -o $(NAME)
 	
 all: $(NAME)
 
