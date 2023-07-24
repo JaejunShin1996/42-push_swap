@@ -6,7 +6,7 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 16:30:22 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/07/24 18:46:51 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/07/24 23:05:47 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <stdio.h>
 
 typedef struct s_stack {
-	int	*arr;
+	int	*numbers;
 	int	top;
 }	t_stack;
 
