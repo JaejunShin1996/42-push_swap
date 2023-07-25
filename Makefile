@@ -8,8 +8,8 @@ SRCS	= push_swap generate_stack utilies
 CFILES	= $(SRCS:%=%.c)
 
 $(NAME):
-	$(CC) $(CFLAGS) $(CFILES) -L./Libft -lft -I . -o $(NAME)
-	
+	$(CC) $(CFLAGS) $(CFILES) -L./Libft -lft2 -I . -o $(NAME)
+
 all: $(NAME)
 
 clean:

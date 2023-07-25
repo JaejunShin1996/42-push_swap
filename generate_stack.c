@@ -6,7 +6,7 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 11:04:50 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/07/25 14:35:02 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/07/25 16:01:08 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,24 +45,30 @@ int	arg_count(char	*argv[])
 	return (i);
 }
 
+t_element	generate_element(int num)
+{
+	t_element	element;
+
+	element.num = num;
+	element.next = NULL;
+	element.prev = NULL;
+	return (element);
+}
+
 t_stack	stack_numbers(char *argv[], char c)
 {
-	t_stack	stack;
-	int		i;
+	t_stack		stack;
+	t_element	temp;
+	int			i;
 
+	stack.a = (t_element *)malloc(arg_count(argv) * sizeof(t_element));
+	stack.b = (t_element *)malloc(arg_count(argv) * sizeof(t_element));
 	i = 0;
-	stack.numbers = (int **)malloc(arg_count(argv) * sizeof(int *));
-	if (!stack.numbers)
-		stack.numbers = NULL;
-	while (argv[i] && c == 'a')
+	while (argv[i])
 	{
-		*stack.numbers[i] = ft_atoi(argv[i]);
+		temp = generate_element(ft_atoi(argv[i]));
+		stack.a[i] = temp;
 		i++;
 	}
-	if (c == 'a')
-		stack.top = *stack.numbers;
-	if (c == 'b')
-		stack.top = NULL;
-	i = 0;
 	return (stack);
 }

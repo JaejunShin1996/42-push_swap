@@ -6,7 +6,7 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 11:06:59 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/07/25 12:49:47 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/07/25 15:40:34 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,28 +24,28 @@ int	number_count(int **numbers)
 
 void	swap(t_stack stack)
 {
-	int	len;
-	int	temp;
+//	int	len;
+//	int	temp;
 
-	len = number_count(stack.numbers);
-	if (len < 2)
-		return ;
-	temp = stack.numbers[len - 1][0];
-	stack.numbers[len] = stack.numbers[len - 1];
-	stack.numbers[len - 1] = &temp;
+//	len = number_count(stack.numbers);
+//	if (len < 2)
+//		return ;
+//	temp = stack.numbers[len - 1][0];
+//	stack.numbers[len] = stack.numbers[len - 1];
+//	stack.numbers[len - 1] = &temp;
 }
 
 void	push(t_stack from, t_stack to)
 {
-	int	from_len;
-	int	to_len;
-	int	temp;
+	//int	from_len;
+	//int	to_len;
+	//int	temp;
 
-	from_len = number_count(from.numbers);
-	to_len = number_count(to.numbers);
-	if (from_len < 1)
-		return ;
-	temp = *from.numbers[from_len - 1];
-	from.numbers[from_len - 1] = NULL;
-	to.numbers[to_len - 1] = &temp;
+	//from_len = number_count(from.numbers);
+	//to_len = number_count(to.numbers);
+	//if (from_len < 1)
+	//	return ;
+	//temp = *from.numbers[from_len - 1];
+	//from.numbers[from_len - 1] = NULL;
+	//to.numbers[to_len - 1] = &temp;
 }

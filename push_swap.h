@@ -6,7 +6,7 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 16:30:22 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/07/25 12:17:29 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/07/25 15:51:04 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,15 @@
 # include <stdio.h>
 # include "Libft/libft.h"
 
+typedef struct s_element {
+	int				num;
+	struct s_stack	*next;
+	struct s_stack	*prev;
+}	t_element;
+
 typedef struct s_stack {
-	int	**numbers;
-	int	*top;
+	t_element	*a;
+	t_element	*b;
 }	t_stack;
 
 int		check_validity(char *input[]);
