@@ -3,12 +3,12 @@ NAME	= push_swap
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
 
-SRCS	= push_swap generate_stack utilies
+SRCS	= push_swap
 
 CFILES	= $(SRCS:%=%.c)
 
 $(NAME):
-	$(CC) $(CFLAGS) $(CFILES) -L./Libft -lft2 -I . -o $(NAME)
+	$(CC) $(CFLAGS) $(CFILES) -L./includes -lft -I . -o $(NAME)
 
 all: $(NAME)
 
