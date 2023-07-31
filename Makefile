@@ -3,7 +3,7 @@ NAME	= push_swap
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
 
-SRCS	= push_swap
+SRCS	= push_swap operations generate_stack
 
 CFILES	= $(SRCS:%=%.c)
 
