@@ -6,7 +6,7 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 16:30:22 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/01 12:13:07 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/01 19:21:11 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,25 @@ typedef struct s_stack {
 
 // Structure
 t_node	*generate_node(int value);
+void	print_list(t_node **head);
 void	insert_at_head(t_node **head, t_node **tail, int value);
-void	insert_after_node(t_node *node_to_insert_after, t_node *new_node);
 int		remove_head(t_stack *stack);
+
+// Error handling
+unsigned int	pos_atoi(const char *str, int i);
+long long		nev_atoi(const char *str, int i);
+int				check_int_range(const char *str);
+int				check_digit(char *input);
+int				check_input(char *argv[]);
+int				error_handling(char *argv[]);
 
 // Operations
 void	swap(t_node **head, char c);
 void	ss(t_node **a_head, t_node **b_head);
-void	push(t_stack *from, t_stack *to);
+void	push(t_stack *from, t_stack *to, char to_stack);
+void	rotate(t_stack *stack, char which);
+void	rr(t_stack *a, t_stack *b);
+void	reverse_rotate(t_stack *stack, char which);
+void	rrr(t_stack *a, t_stack *b);
 
 #endif

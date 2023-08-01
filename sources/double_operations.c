@@ -1,31 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations.c                                       :+:      :+:    :+:   */
+/*   double_operations.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/31 20:23:56 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/01 12:17:50 by jaeshin          ###   ########.fr       */
+/*   Created: 2023/08/01 15:36:32 by jaeshin           #+#    #+#             */
+/*   Updated: 2023/08/01 15:47:40 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-void	swap(t_node **head, char c)
-{
-	int	temp;
-
-	if (!*head || !(*head)->next)
-		return ;
-	temp = (*head)->value;
-	(*head)->value = (*head)->next->value;
-	(*head)->next->value = temp;
-	if (c == 'a')
-		ft_putendl_fd("sa", 1);
-	else if (c == 'b')
-		ft_putendl_fd("sb", 1);
-}
+#include "../push_swap.h"
 
 void	ss(t_node **a_head, t_node **b_head)
 {
@@ -34,12 +19,16 @@ void	ss(t_node **a_head, t_node **b_head)
 	ft_putendl_fd("ss", 1);
 }
 
-void	push(t_stack *from, t_stack *to)
+void	rr(t_stack *a, t_stack *b)
 {
-	int	value;
+	rotate(a, 'c');
+	rotate(b, 'c');
+	ft_putendl_fd("rr", 1);
+}
 
-	if (!from->head)
-		return ;
-	value = remove_head(from);
-	insert_at_head(&to->head, &to->tail, value);
+void	rrr(t_stack *a, t_stack *b)
+{
+	reverse_rotate(a, 'c');
+	reverse_rotate(b, 'c');
+	ft_putendl_fd("rrr", 1);
 }

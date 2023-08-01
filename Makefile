@@ -3,7 +3,12 @@ NAME	= push_swap
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
 
-SRCS	= push_swap operations generate_stack
+SRCS	= push_swap \
+			sources/generate_stack \
+			sources/operations \
+			sources/double_operations \
+			sources/error_int \
+			sources/error_handling
 
 CFILES	= $(SRCS:%=%.c)
 
