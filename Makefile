@@ -8,12 +8,12 @@ SRCS	= push_swap operations generate_stack
 CFILES	= $(SRCS:%=%.c)
 
 $(NAME):
-	$(CC) $(CFLAGS) $(CFILES) -L./includes -lft -I . -o $(NAME)
+	$(CC) $(CFLAGS) $(CFILES) -L./includes -lft -o $(NAME)
 
 all: $(NAME)
 
 clean:
-	@rm -f $(OFILES)
+	@rm -f $(NAME)
 
 fclean: clean
 	@rm -f $(NAME)

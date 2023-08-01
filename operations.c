@@ -6,7 +6,7 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 20:23:56 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/07/31 20:24:19 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/01 12:17:50 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,19 @@ void	swap(t_node **head, char c)
 		ft_putendl_fd("sb", 1);
 }
 
-void	ss(t_node **a_head, t_node**b_head)
+void	ss(t_node **a_head, t_node **b_head)
 {
 	swap(a_head, 's');
 	swap(b_head, 's');
 	ft_putendl_fd("ss", 1);
+}
+
+void	push(t_stack *from, t_stack *to)
+{
+	int	value;
+
+	if (!from->head)
+		return ;
+	value = remove_head(from);
+	insert_at_head(&to->head, &to->tail, value);
 }

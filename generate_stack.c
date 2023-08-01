@@ -6,7 +6,7 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 20:25:44 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/07/31 20:25:51 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/01 12:13:44 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,20 +42,20 @@ void	insert_after_node(t_node *node_to_insert_after, t_node *new_node)
 	node_to_insert_after->next = new_node;
 }
 
-void remove_node(t_node **head, t_node *node_to_remove)
+int	remove_head(t_stack *stack)
 {
-    if (*head == NULL || node_to_remove == NULL) {
-        return;
-    }
+	int	value;
 
-    if (*head == node_to_remove)
-        *head = node_to_remove->next;
-    else 
+	value = stack->head->value;
+	if (stack->head == stack->tail)
 	{
-        if (node_to_remove->prev != NULL)
-            node_to_remove->prev->next = node_to_remove->next;
-        if (node_to_remove->next != NULL)
-            node_to_remove->next->prev = node_to_remove->prev;
-    }
-    free(node_to_remove);
+		stack->head = NULL;
+		stack->tail = NULL;
+	}
+	else
+	{
+		stack->head = stack->head->next;
+		stack->head->prev = NULL;
+	}
+    return (value);
 }
