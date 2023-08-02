@@ -6,7 +6,7 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 20:25:44 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/01 15:51:12 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/02 16:18:45 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,13 @@ int	remove_head(t_stack *stack)
 		stack->head->prev = NULL;
 	}
     return (value);
+}
+
+void	generate_stack(char *argv[], t_node **head, t_node **tail)
+{
+	int	i;
+
+	i = 1;
+	while (argv[i])
+		insert_at_head(head, tail, ft_atoi(argv[i++]));
 }

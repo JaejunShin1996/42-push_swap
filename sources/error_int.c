@@ -6,11 +6,30 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 17:26:44 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/01 17:46:05 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/02 15:11:42 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+int	check_digit(char *input)
+{
+	int	i;
+	
+	i = 0;
+	while (input[i])
+	{
+		if (i == 0)
+		{
+			if (!ft_isdigit(input[i]) && input[i] != '-')
+				return (0);
+		}
+		else if (!ft_isdigit(input[i]))
+			return (0);
+		i++;
+	}
+	return (1);
+}
 
 unsigned int	pos_atoi(const char *str, int i)
 {
@@ -55,12 +74,12 @@ int	check_int_range(const char *str)
 	}
 	if (minus < 0)
 	{
-		if (nev_atoi(str, i) < -2147483647)
+		if (nev_atoi(str, i) < (long long)-2147483647)
 			return (0);
 	}
 	else if (minus >= 0)
 	{
-		if (pos_atoi(str, i) > 2147483647)
+		if (pos_atoi(str, i) > (unsigned int)2147483647)
 			return (0);
 	}
 	return (1);

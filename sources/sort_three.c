@@ -1,49 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_handling.c                                   :+:      :+:    :+:   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/01 15:57:08 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/02 16:09:15 by jaeshin          ###   ########.fr       */
+/*   Created: 2023/08/02 15:38:10 by jaeshin           #+#    #+#             */
+/*   Updated: 2023/08/02 16:06:41 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	check_input(char *argv[])
+int	sorted(t_stack *stack)
 {
-	int	i;
+	t_node	*temp;
 
-	i = 1;
-	while (argv[i])
+	temp = stack->head;
+	while (temp->next)
 	{
-		if (!check_digit(argv[i]))
+		if (temp->value > temp->next->value)
 			return (0);
-		else if (!check_int_range(argv[i]))
-			return (0);
-		else if (!check_duplicate(argv, i))
-			return (0);
-		i++;
+		temp = temp->next;
 	}
 	return (1);
 }
 
-int error_sorted(t_stack *a, t_stack *b)
+void	sort_three(t_stack *a)
 {
-	free(a);
-	free(b);
-	ft_putendl_fd("ERROR", 2);
-	return (1);
-}
-
-int	error_handling(char *argv[])
-{
-	if (!check_input(argv))
+	if (!sorted(a))
 	{
-		ft_putendl_fd("ERROR", 2);
-		return (0);
+		
 	}
-	return (1);
 }

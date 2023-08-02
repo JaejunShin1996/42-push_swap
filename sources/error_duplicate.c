@@ -1,34 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   double_operations.c                                :+:      :+:    :+:   */
+/*   error_duplicate.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/01 15:36:32 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/01 15:47:40 by jaeshin          ###   ########.fr       */
+/*   Created: 2023/08/02 14:20:04 by jaeshin           #+#    #+#             */
+/*   Updated: 2023/08/02 15:10:27 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ss(t_node **a_head, t_node **b_head)
+int	cmp_str(const char *str1, const char *str2)
 {
-	swap(a_head, 's');
-	swap(b_head, 's');
-	ft_putendl_fd("ss", 1);
+	size_t	i;
+
+	i = 0;
+	while (str1[i] || str2[i])
+	{
+		if ((unsigned char)str1[i] != (unsigned char)str2[i])
+			return ((unsigned char)str1[i] - (unsigned char)str2[i]);
+		i++;
+	}
+	return (0);
 }
 
-void	rr(t_stack *a, t_stack *b)
+int	check_duplicate(char *argv[], int i)
 {
-	rotate(a, 'c');
-	rotate(b, 'c');
-	ft_putendl_fd("rr", 1);
-}
+	int	j;
 
-void	rrr(t_stack *a, t_stack *b)
-{
-	reverse_rotate(a, 'c');
-	reverse_rotate(b, 'c');
-	ft_putendl_fd("rrr", 1);
+	j = i + 1;
+	while (argv[j])
+	{
+		if (!cmp_str(argv[i], argv[j]))
+			return (0);
+		j++;
+	}
+	return (1);
 }

@@ -1,14 +1,16 @@
-NAME	= push_swap
+NAME	= 	push_swap
 
-CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror
+CC		= 	gcc
+CFLAGS	= 	-Wall -Wextra -Werror
 
-SRCS	= push_swap \
+SRCS	= 	push_swap \
 			sources/generate_stack \
 			sources/operations \
-			sources/double_operations \
+			sources/operations_double \
 			sources/error_int \
-			sources/error_handling
+			sources/error_duplicate \
+			sources/error_handling \
+			sources/sort_three
 
 CFILES	= $(SRCS:%=%.c)
 
