@@ -6,7 +6,7 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 15:54:13 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/02 18:17:34 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/02 18:32:39 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ typedef struct s_stack {
 // Structure
 t_node	*generate_node(int value);
 void	print_list(t_stack *stack);
-void	insert_at_head(t_node **head, t_node **tail, int value);
+void	insert_at_head(t_stack *stack, int value);
 int		remove_head(t_stack *stack);
-void	generate_stack(char *argv[], t_node **head, t_node **tail);
+void	generate_stack(char *argv[], t_stack *stack);
 
 // Operations
 void	swap(t_stack *stack, char c);

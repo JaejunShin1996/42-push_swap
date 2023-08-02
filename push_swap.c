@@ -6,7 +6,7 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 23:24:03 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/02 18:19:11 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/02 18:32:51 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int argc, char *argv[])
 		return (1);
 	stack_a = (t_stack *)malloc(sizeof(t_stack *));
 	stack_b = (t_stack *)malloc(sizeof(t_stack *));
-	generate_stack(argv, &stack_a->head, &stack_a->tail);
+	generate_stack(argv, stack_a);
 	if (sorted(stack_a))
 		return (error_sorted(stack_a, stack_b));
 
