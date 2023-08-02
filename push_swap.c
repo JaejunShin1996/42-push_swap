@@ -6,7 +6,7 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 23:24:03 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/02 16:20:15 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/02 18:19:11 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,12 @@ int	main(int argc, char *argv[])
 	if (sorted(stack_a))
 		return (error_sorted(stack_a, stack_b));
 
-	print_list(&stack_a->head);
-	printf("---a stack---\n");
+	print_list(stack_a);
+	printf("_\na\n");
+	printf("----------------\n");
+	sort_three(stack_a);
+	printf("----------------\n");
+	print_list(stack_a);
+	printf("_\na - sorted\n");
 	return (0);
 }

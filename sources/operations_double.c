@@ -6,16 +6,16 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 14:19:28 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/02 15:52:18 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/02 18:29:50 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ss(t_node **a_head, t_node **b_head)
+void	ss(t_stack *a, t_stack *b)
 {
-	swap(a_head, 's');
-	swap(b_head, 's');
+	swap(a, 's');
+	swap(b, 's');
 	ft_putendl_fd("ss", 1);
 }
 

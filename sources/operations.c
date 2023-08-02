@@ -6,21 +6,21 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 20:23:56 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/01 15:47:51 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/02 18:09:28 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	swap(t_node **head, char c)
+void	swap(t_stack *stack, char c)
 {
 	int	temp;
 
-	if (!*head || !(*head)->next)
+	if (!stack || !stack->head->next)
 		return ;
-	temp = (*head)->value;
-	(*head)->value = (*head)->next->value;
-	(*head)->next->value = temp;
+	temp = stack->head->value;
+	stack->head->value = stack->head->next->value;
+	stack->head->next->value = temp;
 	if (c == 'a')
 		ft_putendl_fd("sa", 1);
 	else if (c == 'b')

@@ -6,18 +6,18 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 15:54:13 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/02 16:19:16 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/02 18:17:34 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdlib.h>
 # include <fcntl.h>
+# include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
 # include "includes/libft.h"
+# include <stdio.h>
 
 typedef struct s_node {
 	int				value;
@@ -32,10 +32,19 @@ typedef struct s_stack {
 
 // Structure
 t_node	*generate_node(int value);
-void	print_list(t_node **head);
+void	print_list(t_stack *stack);
 void	insert_at_head(t_node **head, t_node **tail, int value);
 int		remove_head(t_stack *stack);
 void	generate_stack(char *argv[], t_node **head, t_node **tail);
+
+// Operations
+void	swap(t_stack *stack, char c);
+void	push(t_stack *from, t_stack *to, char to_stack);
+void	rotate(t_stack *stack, char which);
+void	reverse_rotate(t_stack *stack, char which);
+void	ss(t_stack *a, t_stack *b);
+void	rr(t_stack *a, t_stack *b);
+void	rrr(t_stack *a, t_stack *b);
 
 // Error handling
 unsigned int	pos_atoi(const char *str, int i);
@@ -47,17 +56,9 @@ int				cmp_str(const char *str1, const char *str2);
 int				check_duplicate(char *argv[], int i);
 int 			error_sorted(t_stack *a, t_stack *b);
 int				error_handling(char *argv[]);
+int				sorted(t_stack *stack);
 
-// Sorting
-int	sorted(t_stack *stack);
-
-// Operations
-void	swap(t_node **head, char c);
-void	push(t_stack *from, t_stack *to, char to_stack);
-void	rotate(t_stack *stack, char which);
-void	reverse_rotate(t_stack *stack, char which);
-void	ss(t_node **a_head, t_node **b_head);
-void	rr(t_stack *a, t_stack *b);
-void	rrr(t_stack *a, t_stack *b);
+// Sort
+void	sort_three(t_stack *a);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 20:25:44 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/02 16:18:45 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/02 18:29:54 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ t_node	*generate_node(int value)
 	return (temp);
 }
 
-void	print_list(t_node **head)
+void	print_list(t_stack *stack)
 {
 	t_node	*temp;
 	
-	temp = *head;
+	temp = stack->head;
 	while (temp)
 	{
 		printf("%i\n", temp->value);

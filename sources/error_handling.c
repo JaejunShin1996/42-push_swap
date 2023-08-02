@@ -6,7 +6,7 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 15:57:08 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/02 16:09:15 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/02 16:39:28 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,20 @@ int	check_input(char *argv[])
 		else if (!check_duplicate(argv, i))
 			return (0);
 		i++;
+	}
+	return (1);
+}
+
+int	sorted(t_stack *stack)
+{
+	t_node	*temp;
+
+	temp = stack->head;
+	while (temp->next)
+	{
+		if (temp->value > temp->next->value)
+			return (0);
+		temp = temp->next;
 	}
 	return (1);
 }
