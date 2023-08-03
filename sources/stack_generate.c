@@ -6,7 +6,7 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 13:42:25 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/03 14:01:04 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/03 18:27:16 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,16 @@ t_node	*generate_node(int value)
 	temp->next = NULL;
 	temp->prev = NULL;
 	return (temp);
+}
+
+void	insert_at_head(t_stack *stack, t_node *new_node)
+{
+	if (!stack->tail)
+		stack->tail = new_node;
+	if (stack->head)
+		stack->head->prev = new_node;
+	new_node->next = stack->head;
+	stack->head = new_node;
 }
 
 void	insert_after_head(t_stack *stack, int value)
@@ -38,11 +48,11 @@ void	insert_after_head(t_stack *stack, int value)
 	stack->tail = new_node;
 }
 
-int	remove_head(t_stack *stack)
+t_node	*remove_head(t_stack *stack)
 {
-	int	value;
+	t_node	*temp;
 
-	value = stack->head->value;
+	temp = stack->head;
 	if (stack->head == stack->tail)
 	{
 		stack->head = NULL;
@@ -53,7 +63,7 @@ int	remove_head(t_stack *stack)
 		stack->head = stack->head->next;
 		stack->head->prev = NULL;
 	}
-    return (value);
+    return (temp);
 }
 
 void	generate_stack(char *argv[], t_stack *stack)

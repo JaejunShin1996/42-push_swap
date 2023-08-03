@@ -6,7 +6,7 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 23:24:03 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/03 15:54:41 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/03 18:32:19 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ int	main(int argc, char *argv[])
 	printf("----------------\n");
 	print_list(stack_a);
 	printf("_\na - sorted\n");
+	print_list(stack_b);
 	return (0);
 }

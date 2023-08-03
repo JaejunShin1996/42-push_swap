@@ -11,7 +11,9 @@ SRCS	= 	push_swap \
 			sources/error_int \
 			sources/error_duplicate \
 			sources/error_handling \
-			sources/sort_three
+			sources/sort_three \
+			sources/sort_five \
+			sources/sort 
 
 CFILES	= $(SRCS:%=%.c)
 
@@ -24,7 +26,6 @@ clean:
 	@rm -f $(NAME)
 
 fclean: clean
-	@rm -f $(NAME)
 
 re: fclean all
 
