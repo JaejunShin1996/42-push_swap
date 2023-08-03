@@ -6,7 +6,7 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 15:54:13 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/03 13:45:14 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/03 15:54:45 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,12 @@ int				error_handling(char *argv[]);
 int				sorted(t_stack *stack);
 
 // Sort
+int		sort_three_case1(t_stack *a);
+int		sort_three_case2(t_stack *a);
+void	sort_two(t_stack *a);
 void	sort_three(t_stack *a);
+void	sort_five(t_stack *a, t_stack *b);
+
+void	sort_stack(t_stack *a, t_stack *b);
 
 #endif
