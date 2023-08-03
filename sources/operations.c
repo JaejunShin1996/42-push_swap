@@ -6,7 +6,7 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 20:23:56 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/02 18:33:20 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/03 13:30:48 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	push(t_stack *from, t_stack *to, char to_stack)
 	if (!from->head)
 		return ;
 	value = remove_head(from);
-	insert_at_head(to, value);
+	insert_after_head(to, value);
 	if (to_stack == 'a')
 		ft_putendl_fd("pa", 1);
 	else if (to_stack == 'b')

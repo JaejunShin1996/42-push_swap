@@ -4,7 +4,8 @@ CC		= 	gcc
 CFLAGS	= 	-Wall -Wextra -Werror
 
 SRCS	= 	push_swap \
-			sources/generate_stack \
+			sources/stack_generate \
+			sources/stack_utils \
 			sources/operations \
 			sources/operations_double \
 			sources/error_int \
