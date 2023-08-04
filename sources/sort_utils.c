@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_five.c                                        :+:      :+:    :+:   */
+/*   sort_five_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/02 19:01:35 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/03 18:33:14 by jaeshin          ###   ########.fr       */
+/*   Created: 2023/08/04 12:37:27 by jaeshin           #+#    #+#             */
+/*   Updated: 2023/08/04 12:48:27 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	dis_to_tail(t_node *node)
 
 	temp = node;
 	i = 0;
-	while (temp)
+	while (temp->next)
 	{
 		temp = temp->next;
 		i++;
@@ -34,7 +34,7 @@ int	dis_to_head(t_node *node)
 
 	temp = node;
 	i = 0;
-	while (temp)
+	while (temp->prev)
 	{
 		temp = temp->prev;
 		i++;
@@ -72,68 +72,4 @@ t_node	*get_smallest(t_stack *stack)
 		temp2 = temp2->next;
 	}
 	return (temp);
-}
-
-void	push_big(t_stack *a, t_stack *b)
-{
-	t_node	*big;
-	int		to_head;
-
-	big = get_biggest(a);
-	to_head = dis_to_head(big);
-	if (to_head < a->size / 2)
-	{
-		while (to_head)
-		{
-			rotate(a, 'a');
-			to_head--;
-		}
-	}
-	else
-	{
-		to_head = to_head - (a->size / 2);
-		while (to_head)
-		{
-			reverse_rotate(a, 'a');
-			to_head--;
-		}
-	}
-	push(a, b, 'b');
-}
-
-void	push_small(t_stack *a, t_stack *b)
-{
-	t_node	*small;
-	int		to_head;
-
-	small = get_smallest(a);
-	to_head = dis_to_head(small);
-	if (to_head < a->size / 2)
-	{
-		while (to_head)
-		{
-			rotate(a, 'a');
-			to_head--;
-		}
-	}
-	else
-	{
-		to_head = a->size - to_head;
-		while (to_head)
-		{
-			reverse_rotate(a, 'a');
-			to_head--;
-		}
-	}
-	push(a, b, 'b');
-}
-
-void	sort_five(t_stack *a, t_stack *b)
-{
-	push_big(a, b);
-	push_small(a, b);
-	sort_three(a);
-	push(b, a, 'a');
-	push(b, a, 'a'); //here to be fixed
-	reverse_rotate(a, 'a');
 }

@@ -6,7 +6,7 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 15:57:08 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/02 16:39:28 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/04 13:11:27 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	sorted(t_stack *stack)
 	return (1);
 }
 
-int error_sorted(t_stack *a, t_stack *b)
+int error_sorted_allocation(t_stack *a, t_stack *b)
 {
 	free(a);
 	free(b);

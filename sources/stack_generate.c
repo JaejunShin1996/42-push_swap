@@ -6,7 +6,7 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 13:42:25 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/03 18:27:16 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/04 13:11:48 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,22 +33,23 @@ void	insert_at_head(t_stack *stack, t_node *new_node)
 	stack->head = new_node;
 }
 
-void	insert_after_head(t_stack *stack, int value)
+void	insert_after_tail(t_stack *stack, int value)
 {
 	t_node	*new_node;
 
 	new_node = generate_node(value);
 	if (!stack->head)
-		stack->head = new_node;
-	if (stack->tail)
 	{
-		stack->tail->next = new_node;
-		new_node->prev = stack->tail;
+		stack->head = new_node;
+		stack->tail = new_node;
+		return ;
 	}
+	stack->tail->next = new_node;
+	new_node->prev = stack->tail;
 	stack->tail = new_node;
 }
 
-t_node	*remove_head(t_stack *stack)
+t_node	*detach_head(t_stack *stack)
 {
 	t_node	*temp;
 
@@ -66,12 +67,14 @@ t_node	*remove_head(t_stack *stack)
     return (temp);
 }
 
-void	generate_stack(char *argv[], t_stack *stack)
+void	generate_stack(char *argv[], t_stack *a, t_stack *b)
 {
 	int	i;
 
+	if (!a || !b)
+		return ;
 	i = 1;
 	while (argv[i])
-		insert_after_head(stack, ft_atoi(argv[i++]));
-	stack->size = get_size(stack);
+		insert_after_tail(a, ft_atoi(argv[i++]));
+	a->size = get_size(a);
 }

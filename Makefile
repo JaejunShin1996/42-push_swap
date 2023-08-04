@@ -11,14 +11,18 @@ SRCS	= 	push_swap \
 			sources/error_int \
 			sources/error_duplicate \
 			sources/error_handling \
+			sources/sort_utils \
 			sources/sort_three \
-			sources/sort_five \
-			sources/sort 
+			sources/sort_ten \
+			sources/sort
 
 CFILES	= $(SRCS:%=%.c)
 
+#$(NAME):
+#	$(CC) $(CFLAGS) $(CFILES) -L./includes -lft -o $(NAME)
+
 $(NAME):
-	$(CC) $(CFLAGS) $(CFILES) -L./includes -lft -o $(NAME)
+	$(CC) $(CFLAGS) $(CFILES) -L./includes -lft_m2 -o $(NAME)
 
 all: $(NAME)
 

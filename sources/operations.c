@@ -6,7 +6,7 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 20:23:56 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/03 18:27:03 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/04 12:47:17 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,11 @@ void	swap(t_stack *stack, char c)
 
 void	push(t_stack *from, t_stack *to, char to_stack)
 {
-	t_node	*node;
-
 	if (!from->head)
 		return ;
-	node = remove_head(from);
-	insert_at_head(to, node);
+	insert_at_head(to, detach_head(from));
+	from->size -= 1;
+	to->size += 1;
 	if (to_stack == 'a')
 		ft_putendl_fd("pa", 1);
 	else if (to_stack == 'b')
