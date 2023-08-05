@@ -6,7 +6,7 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 15:54:13 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/04 17:05:43 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/05 21:40:29 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,12 +68,13 @@ t_node	*get_biggest(t_stack *stack);
 t_node	*get_smallest(t_stack *stack);
 int		sort_three_case1(t_stack *a);
 int		sort_three_case2(t_stack *a);
-void	push_small(t_stack *a, t_stack *b);
+void	push_smallest(t_stack *a, t_stack *b);
 
 // Sort
 void	sort_two(t_stack *a);
 void	sort_three(t_stack *a);
 void	sort_ten(t_stack *a, t_stack *b);
+void	sort_ten_hundred(t_stack *a, t_stack *b);
 void	sort_stack(t_stack *a, t_stack *b);
 
 #endif
