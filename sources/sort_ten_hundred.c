@@ -6,14 +6,14 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 16:40:17 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/05 22:34:59 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/06 21:20:34 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-// to be fixed getting pivot
-t_node	*get_pivot(t_stack *a, int quarter)
+// still fking pivot to be fixed
+int	get_pivot(t_stack *a, int chunk)
 {
 	t_node	*temp;
 	t_node	*temp2;
@@ -22,20 +22,30 @@ t_node	*get_pivot(t_stack *a, int quarter)
 	temp = a->head;
 	temp2 = temp->next;
 	result = get_smallest(a);
-	printf("quarter - %d\n", quarter);
-	while (quarter - 1)
+	while (chunk - 1)
 	{
-		while (temp2->next)
+		temp = a->head;
+		temp2 = temp->next;
+		while (temp2)
 		{
-			if (temp->value > temp2->value && temp2->value > result->value)
+			if (temp2->value > result->value && temp->value > temp2->value)
+			{
 				temp = temp2;
+				// printf("result - %d\n", result->value);
+				// if (result->value >= 40 && result->value < 48)
+				// {
+				// 	printf("-----------------------\n");
+				// 	print_list(a);
+				// 	printf("-----------------------\n");
+				// }
+			}
 			temp2 = temp2->next;
-			result = temp;
 		}
-		quarter--;
+		result = temp;
+		chunk--;
 	}
 	printf("pivot - %d\n", result->value);
-	return (result);
+	return (result->value);
 }
 
 void	push_below_pivot(t_stack *a, t_stack *b, t_node *node)
@@ -54,7 +64,7 @@ void	push_below_pivot(t_stack *a, t_stack *b, t_node *node)
 	else
 	{
 		to_head = a->size - to_head;
-		while (to_head > 0)
+		while (to_head)
 		{
 			reverse_rotate(a, 'a');
 			to_head--;
@@ -63,34 +73,43 @@ void	push_below_pivot(t_stack *a, t_stack *b, t_node *node)
 	push(a, b, 'b');
 }
 
-void	push_chunk(t_stack *a, t_stack *b, int quarter)
+void	push_chunk(t_stack *a, t_stack *b, int chunk)
 {
-	t_node	*pivot;
+	int		pivot;
 	t_node	*temp;
 
-	pivot = get_pivot(a, quarter);
+	pivot = get_pivot(a, chunk);
 	temp = a->head;
 	while (temp)
 	{
-		if (temp->value <= pivot->value)
+		if (temp->value <= pivot)
+		{
 			push_below_pivot(a, b, temp);
-		temp = temp->next;
+			temp = a->head;
+		}
+		else
+		{
+			temp = temp->next;
+		}
 	}
 }
 
-void	sort_a_chunk(t_stack *a, t_stack *b, int quarter)
+void	sort_a_chunk(t_stack *a, t_stack *b, int chunk)
 {
 	int	i;
 
-	i = 3;
-	while (i < quarter)
+	i = 0;
+	while (i < chunk - 3)
 	{
 		push_smallest(a, b);
 		i++;
 	}
 	sort_three(a);
-	while (quarter)
+	while (i > 3)
+	{
 		push(b, a, 'a');
+		i--;
+	}
 }
 
 void	sort_b_chunk(t_stack *a, t_stack *b)
@@ -110,7 +129,7 @@ void	sort_b_chunk(t_stack *a, t_stack *b)
 	}
 	else
 	{
-		to_head = to_head - (b->size / 2);
+		to_head = b->size - to_head;
 		while (to_head)
 		{
 			reverse_rotate(b, 'b');
@@ -120,21 +139,21 @@ void	sort_b_chunk(t_stack *a, t_stack *b)
 	push(b, a, 'a');
 }
 
-void	sort_ten_hundred(t_stack *a, t_stack *b)
+void	sort_ten_hundred(t_stack *a, t_stack *b, int divider)
 {
-	//int	i;
-	int	quarter;
+	int	i;
+	int	chunk;
 
-	//i = 4;
-	quarter = a->size / 4;
-	push_chunk(a, b, quarter);
-	//printf("--------------------\n");
-	//printf("-aaaaaaaaaaa-\n");
-	//print_list(a);
-	//printf("-bbbbbbbbb-\n");
-	//print_list(b);
-	//printf("--------------------\n");
-	//sort_a_chunk(a, b, quarter);
-	//while (b->size)
-	//	sort_a_chunk(a, b, quarter);
+	i = divider - 1;
+	chunk = a->size / divider;
+	while (i)
+	{
+		push_chunk(a, b, chunk);
+		i--;
+	}
+	sort_a_chunk(a, b, chunk);
+	// print_list(b);
+	// printf("-bbbbbbbbb-\n");
+	// while (b->size)
+	// 	sort_b_chunk(a, b);
 }

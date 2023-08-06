@@ -19,11 +19,11 @@ SRCS	= 	push_swap \
 
 CFILES	= $(SRCS:%=%.c)
 
-#$(NAME):
-#	$(CC) $(CFLAGS) $(CFILES) -L./includes -lft -o $(NAME)
-
 $(NAME):
-	$(CC) $(CFLAGS) $(CFILES) -L./includes -lft_m2 -o $(NAME)
+	$(CC) $(CFLAGS) $(CFILES) -L./includes -lft -o $(NAME)
+
+# $(NAME):
+# 	$(CC) $(CFLAGS) $(CFILES) -L./includes -lft_m2 -o $(NAME)
 
 all: $(NAME)
 

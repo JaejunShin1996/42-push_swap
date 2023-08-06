@@ -6,7 +6,7 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 15:54:13 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/05 21:40:29 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/06 19:55:05 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	push_smallest(t_stack *a, t_stack *b);
 void	sort_two(t_stack *a);
 void	sort_three(t_stack *a);
 void	sort_ten(t_stack *a, t_stack *b);
-void	sort_ten_hundred(t_stack *a, t_stack *b);
+void	sort_ten_hundred(t_stack *a, t_stack *b, int divider);
 void	sort_stack(t_stack *a, t_stack *b);
 
 #endif
