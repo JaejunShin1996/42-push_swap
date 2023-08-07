@@ -6,45 +6,48 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 16:40:17 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/06 21:20:34 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/07 17:35:53 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-// still fking pivot to be fixed
 int	get_pivot(t_stack *a, int chunk)
 {
 	t_node	*temp;
 	t_node	*temp2;
+	int		temp_small;
 	t_node	*result;
+	int		i;
+	int		smaller_count;
 
-	temp = a->head;
-	temp2 = temp->next;
 	result = get_smallest(a);
-	while (chunk - 1)
+	temp = a->head;
+	i = 1;
+	smaller_count = 0;
+	while (i < chunk)
 	{
 		temp = a->head;
-		temp2 = temp->next;
-		while (temp2)
+		while (temp)
 		{
-			if (temp2->value > result->value && temp->value > temp2->value)
+			smaller_count = 0;
+			if (result->value < temp->value)
 			{
-				temp = temp2;
-				// printf("result - %d\n", result->value);
-				// if (result->value >= 40 && result->value < 48)
-				// {
-				// 	printf("-----------------------\n");
-				// 	print_list(a);
-				// 	printf("-----------------------\n");
-				// }
+				temp_small = temp->value;
+				temp2 = a->head;
+				while (temp2 && i >= smaller_count)
+				{
+					if (temp_small > temp2->value)
+						smaller_count++;
+					temp2 = temp2->next;
+				}
 			}
-			temp2 = temp2->next;
+			if (i == smaller_count)
+				result = temp;
+			temp = temp->next;
 		}
-		result = temp;
-		chunk--;
+		i++;
 	}
-	printf("pivot - %d\n", result->value);
 	return (result->value);
 }
 
@@ -94,12 +97,12 @@ void	push_chunk(t_stack *a, t_stack *b, int chunk)
 	}
 }
 
-void	sort_a_chunk(t_stack *a, t_stack *b, int chunk)
+void	sort_a_chunk(t_stack *a, t_stack *b)
 {
 	int	i;
 
 	i = 0;
-	while (i < chunk - 3)
+	while (a->size > 3)
 	{
 		push_smallest(a, b);
 		i++;
@@ -151,9 +154,7 @@ void	sort_ten_hundred(t_stack *a, t_stack *b, int divider)
 		push_chunk(a, b, chunk);
 		i--;
 	}
-	sort_a_chunk(a, b, chunk);
-	// print_list(b);
-	// printf("-bbbbbbbbb-\n");
-	// while (b->size)
-	// 	sort_b_chunk(a, b);
+	sort_a_chunk(a, b);
+	while (b->size)
+		sort_b_chunk(a, b);
 }
