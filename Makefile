@@ -11,10 +11,11 @@ SRCS	= 	push_swap \
 			sources/error_int \
 			sources/error_duplicate \
 			sources/error_handling \
+			sources/free_stack \
 			sources/sort_utils \
 			sources/sort_three \
 			sources/sort_ten \
-			sources/sort_ten_hundred \
+			sources/sort_over_ten \
 			sources/sort
 
 CFILES	= $(SRCS:%=%.c)

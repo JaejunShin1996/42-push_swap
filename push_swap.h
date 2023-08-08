@@ -6,7 +6,7 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 15:54:13 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/06 19:55:05 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/08 12:06:09 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,12 @@ int				check_digit(char *input);
 int				check_input(char *argv[]);
 int				cmp_str(const char *str1, const char *str2);
 int				check_duplicate(char *argv[], int i);
-int 			error_sorted_allocation(t_stack *a, t_stack *b);
-int				error_handling(char *argv[]);
+int 			error_allocation_sorted(t_stack *a, t_stack *b);
+int				error_handling(int argc, char *argv[]);
 int				sorted(t_stack *stack);
+
+// Free
+void	free_stack(t_stack *stack);
 
 // Sort Utils
 int		dis_to_tail(t_node *node);
@@ -74,7 +77,7 @@ void	push_smallest(t_stack *a, t_stack *b);
 void	sort_two(t_stack *a);
 void	sort_three(t_stack *a);
 void	sort_ten(t_stack *a, t_stack *b);
-void	sort_ten_hundred(t_stack *a, t_stack *b, int divider);
+void	sort_over_ten(t_stack *a, t_stack *b, int divider);
 void	sort_stack(t_stack *a, t_stack *b);
 
 #endif

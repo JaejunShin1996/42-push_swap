@@ -6,7 +6,7 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 17:26:44 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/02 15:11:42 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/08 11:37:47 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ int	check_digit(char *input)
 			return (0);
 		i++;
 	}
+	if (i > 11)
+		return (0);
+	else if (i == 1 && input[0] == '-')
+		return (0);
 	return (1);
 }
 
@@ -74,7 +78,7 @@ int	check_int_range(const char *str)
 	}
 	if (minus < 0)
 	{
-		if (nev_atoi(str, i) < (long long)-2147483647)
+		if (nev_atoi(str, i) < (long long)-2147483648)
 			return (0);
 	}
 	else if (minus >= 0)

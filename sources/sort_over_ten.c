@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_ten_hundred.c                                 :+:      :+:    :+:   */
+/*   sort_over_hundred.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 16:40:17 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/07 17:35:53 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/08 09:47:22 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,7 +142,7 @@ void	sort_b_chunk(t_stack *a, t_stack *b)
 	push(b, a, 'a');
 }
 
-void	sort_ten_hundred(t_stack *a, t_stack *b, int divider)
+void	sort_over_ten(t_stack *a, t_stack *b, int divider)
 {
 	int	i;
 	int	chunk;
