@@ -6,11 +6,11 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 13:42:25 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/04 13:11:48 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/08 17:03:55 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 t_node	*generate_node(int value)
 {
@@ -64,7 +64,7 @@ t_node	*detach_head(t_stack *stack)
 		stack->head = stack->head->next;
 		stack->head->prev = NULL;
 	}
-    return (temp);
+	return (temp);
 }
 
 void	generate_stack(char *argv[], t_stack *a, t_stack *b)

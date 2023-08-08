@@ -6,11 +6,11 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 12:37:27 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/06 19:27:54 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/08 17:03:49 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 int	dis_to_tail(t_node *node)
 {

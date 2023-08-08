@@ -6,16 +6,16 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 17:26:44 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/08 11:37:47 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/08 17:03:23 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 int	check_digit(char *input)
 {
 	int	i;
-	
+
 	i = 0;
 	while (input[i])
 	{

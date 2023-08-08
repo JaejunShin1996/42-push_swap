@@ -6,11 +6,11 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 15:57:08 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/08 12:09:31 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/08 17:03:20 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 int	check_input(char *argv[])
 {
@@ -44,13 +44,13 @@ int	sorted(t_stack *stack)
 	return (1);
 }
 
-int error_allocation_sorted(t_stack *a, t_stack *b)
+void	error_allocation_sorted(t_stack *a, t_stack *b)
 {
 	if (a)
 		free_stack(a);
 	if (b)
 		free_stack(b);
-	return (1);
+	exit(1);
 }
 
 int	error_handling(int argc, char *argv[])

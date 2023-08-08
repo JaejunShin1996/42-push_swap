@@ -6,11 +6,11 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 14:20:04 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/02 15:10:27 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/08 17:03:07 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 int	cmp_str(const char *str1, const char *str2)
 {

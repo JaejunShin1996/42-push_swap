@@ -6,11 +6,11 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 19:01:35 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/05 21:46:01 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/08 17:03:41 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 void	push_smallest(t_stack *a, t_stack *b)
 {

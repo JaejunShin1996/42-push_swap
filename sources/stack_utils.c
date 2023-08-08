@@ -6,11 +6,11 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 13:43:45 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/03 14:00:15 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/08 17:03:58 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 void	print_list(t_stack *stack)
 {

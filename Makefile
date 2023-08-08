@@ -3,7 +3,7 @@ NAME	= 	push_swap
 CC		= 	gcc
 CFLAGS	= 	-Wall -Wextra -Werror
 
-SRCS	= 	push_swap \
+SRCS	= 	sources/push_swap \
 			sources/stack_generate \
 			sources/stack_utils \
 			sources/operations \
@@ -16,6 +16,7 @@ SRCS	= 	push_swap \
 			sources/sort_three \
 			sources/sort_ten \
 			sources/sort_over_ten \
+			sources/sort_over_ten2 \
 			sources/sort
 
 CFILES	= $(SRCS:%=%.c)

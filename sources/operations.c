@@ -6,11 +6,11 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 20:23:56 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/08 12:15:36 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/08 17:03:33 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 void	swap(t_stack *stack, char c)
 {
