@@ -6,7 +6,7 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 15:57:08 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/08 17:03:20 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/09 10:57:01 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,18 +44,18 @@ int	sorted(t_stack *stack)
 	return (1);
 }
 
-void	error_allocation_sorted(t_stack *a, t_stack *b)
+int	error_allocation_sorted(t_stack *a, t_stack *b)
 {
 	if (a)
 		free_stack(a);
 	if (b)
 		free_stack(b);
-	exit(1);
+	return (0);
 }
 
-int	error_handling(int argc, char *argv[])
+int	error_handling(char *argv[])
 {
-	if (argc < 2 || !check_input(argv))
+	if (!check_input(argv))
 	{
 		ft_putendl_fd("Error", 2);
 		return (1);

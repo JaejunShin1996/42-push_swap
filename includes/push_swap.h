@@ -6,7 +6,7 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 15:54:13 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/08 17:06:53 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/09 10:57:19 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ int				check_digit(char *input);
 int				check_input(char *argv[]);
 int				cmp_str(const char *str1, const char *str2);
 int				check_duplicate(char *argv[], int i);
-void			error_allocation_sorted(t_stack *a, t_stack *b);
-int				error_handling(int argc, char *argv[]);
+int				error_allocation_sorted(t_stack *a, t_stack *b);
+int				error_handling(char *argv[]);
 int				sorted(t_stack *stack);
 unsigned int	pos_atoi(const char *str, int i);
 long long		nev_atoi(const char *str, int i);
