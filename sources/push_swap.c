@@ -6,7 +6,7 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 23:24:03 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/09 16:51:45 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/09 17:54:08 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ int	main(int argc, char *argv[])
 	else
 		input = argv_to_input(argv, argc);
 	if (error_handling(input))
-		return (input_error(input));
+		input_error(input);
 	stack_a = malloc(sizeof(t_stack *) + sizeof(t_node));
 	stack_b = malloc(sizeof(t_stack *) + sizeof(t_node));
 	if (!stack_a || !stack_b)
-		return (error_allocation(stack_a, stack_b, input));
+		error_allocation(stack_a, stack_b, input);
 	generate_stack(input, stack_a, stack_b);
 	sort_stack(stack_a, stack_b);
 	free_input(input);

@@ -6,7 +6,7 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 16:26:20 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/09 16:31:12 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/09 17:54:38 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ void	free_input(char **input)
 	free(input);
 }
 
-int	input_error(char **input)
+void	input_error(char **input)
 {
 	free_input(input);
-	return (0);
+	exit (0);
 }
