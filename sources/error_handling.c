@@ -6,7 +6,7 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 15:57:08 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/09 10:57:01 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/09 16:43:50 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	check_input(char *argv[])
 {
-	int	i;
+	int		i;
 
-	i = 1;
+	i = 0;
 	while (argv[i])
 	{
 		if (!check_digit(argv[i]))
@@ -44,12 +44,13 @@ int	sorted(t_stack *stack)
 	return (1);
 }
 
-int	error_allocation_sorted(t_stack *a, t_stack *b)
+int	error_allocation(t_stack *a, t_stack *b, char **input)
 {
 	if (a)
 		free_stack(a);
 	if (b)
 		free_stack(b);
+	free_input(input);
 	return (0);
 }
 

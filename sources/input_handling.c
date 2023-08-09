@@ -1,31 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   input_handling.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/03 13:20:28 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/09 15:55:52 by jaeshin          ###   ########.fr       */
+/*   Created: 2023/08/09 16:26:20 by jaeshin           #+#    #+#             */
+/*   Updated: 2023/08/09 16:31:12 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	sort_stack(t_stack *a, t_stack *b)
+char	**argv_to_input(char **argv, int argc)
 {
-	if (sorted(a))
+	char	**result;
+	int		i;
+
+	i = 0;
+	result = malloc((argc) * sizeof(char *));
+	while (i < argc - 1)
 	{
-		free_stack(a);
-		free_stack(b);
-		return ;
+		result[i] = ft_strdup(argv[i + 1]);
+		i++;
 	}
-	else if (a->size <= 10)
-		sort_ten(a, b);
-	else if (10 < a->size && a->size <= 100)
-		sort_over_ten(a, b, 5);
-	else if (100 < a->size && a->size <= 500)
-		sort_over_ten(a, b, 11);
-	free_stack(a);
-	free_stack(b);
+	return (result);
+}
+
+void	free_input(char **input)
+{
+	int	i;
+
+	i = 0;
+	while (input[i])
+	{
+		free(input[i]);
+		i++;
+	}
+	free(input);
+}
+
+int	input_error(char **input)
+{
+	free_input(input);
+	return (0);
 }

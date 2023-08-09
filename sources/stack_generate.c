@@ -6,7 +6,7 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 13:42:25 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/08 17:03:55 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/09 15:30:29 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	generate_stack(char *argv[], t_stack *a, t_stack *b)
 
 	if (!a || !b)
 		return ;
-	i = 1;
+	i = 0;
 	while (argv[i])
 		insert_after_tail(a, ft_atoi(argv[i++]));
 	a->size = get_size(a);

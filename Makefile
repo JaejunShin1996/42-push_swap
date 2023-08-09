@@ -6,6 +6,7 @@ CFLAGS	= 	-Wall -Wextra -Werror
 SRCS	= 	sources/push_swap \
 			sources/stack_generate \
 			sources/stack_utils \
+			sources/input_handling \
 			sources/operations \
 			sources/operations_double \
 			sources/error_int \
