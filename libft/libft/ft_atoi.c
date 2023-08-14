@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/03 13:20:28 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/14 11:40:46 by jaeshin          ###   ########.fr       */
+/*   Created: 2023/07/11 11:49:27 by jaeshin           #+#    #+#             */
+/*   Updated: 2023/08/11 15:59:32 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/libft.h"
 
-void	sort_stack(t_stack *a, t_stack *b)
+int	ft_atoi(const char *str)
 {
-	if (sorted(a))
+	int	i;
+	int	minus;
+	int	result;
+
+	i = 0;
+	minus = 1;
+	result = 0;
+	while (str[i] == ' ' || (9 <= str[i] && str[i] <= 13))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		free_stack(a);
-		free_stack(b);
-		return ;
+		if (str[i] == '-')
+			minus *= -1;
+		i++;
 	}
-	else if (a->size <= 10)
-		sort_ten(a, b);
-	else if (10 < a->size && a->size <= 100)
-		sort_over_ten(a, b, 5);
-	else if (100 < a->size && a->size <= 500)
-		sort_over_ten(a, b, 11);
-	free_stack(a);
-	free_stack(b);
+	while ('0' <= str[i] && str[i] <= '9')
+	{
+		result = (str[i] - '0') + (result * 10);
+		i++;
+	}
+	return (result * minus);
 }

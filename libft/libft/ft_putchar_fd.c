@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/03 13:20:28 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/14 11:40:46 by jaeshin          ###   ########.fr       */
+/*   Created: 2023/07/11 13:19:13 by jaeshin           #+#    #+#             */
+/*   Updated: 2023/08/11 16:00:15 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/libft.h"
 
-void	sort_stack(t_stack *a, t_stack *b)
+/*
+ft_putchar_fd outputs the character ’c’ to the given file descriptor.
+0 - stdin
+1 - stdout
+2 - stderr
+*/
+void	ft_putchar_fd(char c, int fd)
 {
-	if (sorted(a))
-	{
-		free_stack(a);
-		free_stack(b);
-		return ;
-	}
-	else if (a->size <= 10)
-		sort_ten(a, b);
-	else if (10 < a->size && a->size <= 100)
-		sort_over_ten(a, b, 5);
-	else if (100 < a->size && a->size <= 500)
-		sort_over_ten(a, b, 11);
-	free_stack(a);
-	free_stack(b);
+	write(fd, &c, 1);
 }

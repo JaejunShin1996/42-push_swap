@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/03 13:20:28 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/14 11:40:46 by jaeshin          ###   ########.fr       */
+/*   Created: 2023/07/11 13:26:35 by jaeshin           #+#    #+#             */
+/*   Updated: 2023/08/11 16:00:48 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/libft.h"
 
-void	sort_stack(t_stack *a, t_stack *b)
+/*
+it str1 is less than str2, retturns -value
+if str1 is greater than str2, returns +value
+if same, returns 0.
+*/
+int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
-	if (sorted(a))
+	size_t			i;
+
+	i = 0;
+	while (i < n && (str1[i] || str2[i]))
 	{
-		free_stack(a);
-		free_stack(b);
-		return ;
+		if ((unsigned char)str1[i] != (unsigned char)str2[i])
+			return ((unsigned char)str1[i] - (unsigned char)str2[i]);
+		i++;
 	}
-	else if (a->size <= 10)
-		sort_ten(a, b);
-	else if (10 < a->size && a->size <= 100)
-		sort_over_ten(a, b, 5);
-	else if (100 < a->size && a->size <= 500)
-		sort_over_ten(a, b, 11);
-	free_stack(a);
-	free_stack(b);
+	return (0);
 }

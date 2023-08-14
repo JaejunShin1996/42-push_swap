@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/03 13:20:28 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/14 11:40:46 by jaeshin          ###   ########.fr       */
+/*   Created: 2023/07/11 13:28:44 by jaeshin           #+#    #+#             */
+/*   Updated: 2023/08/11 16:01:05 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/libft.h"
 
-void	sort_stack(t_stack *a, t_stack *b)
+int	ft_toupper(int c)
 {
-	if (sorted(a))
-	{
-		free_stack(a);
-		free_stack(b);
-		return ;
-	}
-	else if (a->size <= 10)
-		sort_ten(a, b);
-	else if (10 < a->size && a->size <= 100)
-		sort_over_ten(a, b, 5);
-	else if (100 < a->size && a->size <= 500)
-		sort_over_ten(a, b, 11);
-	free_stack(a);
-	free_stack(b);
+	if ('a' <= c && c <= 'z')
+		return (c - 32);
+	return (c);
 }

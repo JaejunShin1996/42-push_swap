@@ -6,7 +6,7 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 15:54:13 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/09 17:55:03 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/14 11:25:47 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@
 # include <fcntl.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include "libft.h"
 # include <stdio.h>
+# include "../libft/includes/libft.h"
+# include "../libft/includes/get_next_line.h"
+# include "../libft/includes/ft_printf.h"
 
 typedef struct s_node {
 	int				value;

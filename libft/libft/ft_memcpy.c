@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/03 13:20:28 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/14 11:40:46 by jaeshin          ###   ########.fr       */
+/*   Created: 2023/07/11 13:05:50 by jaeshin           #+#    #+#             */
+/*   Updated: 2023/08/11 16:00:06 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/libft.h"
 
-void	sort_stack(t_stack *a, t_stack *b)
+/*
+ft_memcpy copies n characters from src to dest.
+*/
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	if (sorted(a))
+	size_t		i;
+	char		*temp;
+	const char	*temp2;
+
+	if (!dest && !src)
+		return (NULL);
+	i = 0;
+	temp = (char *)dest;
+	temp2 = (const char *)src;
+	while (i < n)
 	{
-		free_stack(a);
-		free_stack(b);
-		return ;
+		temp[i] = temp2[i];
+		i++;
 	}
-	else if (a->size <= 10)
-		sort_ten(a, b);
-	else if (10 < a->size && a->size <= 100)
-		sort_over_ten(a, b, 5);
-	else if (100 < a->size && a->size <= 500)
-		sort_over_ten(a, b, 11);
-	free_stack(a);
-	free_stack(b);
+	return (dest);
 }

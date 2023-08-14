@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/03 13:20:28 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/14 11:40:46 by jaeshin          ###   ########.fr       */
+/*   Created: 2023/07/11 13:03:35 by jaeshin           #+#    #+#             */
+/*   Updated: 2023/08/11 16:00:02 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/libft.h"
 
-void	sort_stack(t_stack *a, t_stack *b)
+/*
+ft_memchr searches for the first occurrence 
+	of the character of c in the first n bytes.
+*/
+void	*ft_memchr(const void *str, int c, size_t n)
 {
-	if (sorted(a))
+	unsigned char	*temp;
+
+	temp = (unsigned char *)str;
+	while (n--)
 	{
-		free_stack(a);
-		free_stack(b);
-		return ;
+		if (*temp == (unsigned char)c)
+			return ((void *)temp);
+		temp++;
 	}
-	else if (a->size <= 10)
-		sort_ten(a, b);
-	else if (10 < a->size && a->size <= 100)
-		sort_over_ten(a, b, 5);
-	else if (100 < a->size && a->size <= 500)
-		sort_over_ten(a, b, 11);
-	free_stack(a);
-	free_stack(b);
+	return (NULL);
 }
