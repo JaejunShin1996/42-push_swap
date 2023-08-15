@@ -12,15 +12,15 @@ OBJS	= $(SRCS:.c=.o)
 $(NAME): 
 	$(CC) $(CFLAGS) -c $(SRCS)
 	ar rc $(NAME) *.o
-	make clean
+	@make clean
 
 all: $(NAME)
 
 clean:
-	rm -f *.o
+	@rm -f *.o
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 
