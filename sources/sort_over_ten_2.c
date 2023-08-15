@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_over_ten2.c                                   :+:      :+:    :+:   */
+/*   sort_over_ten_2.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 16:19:43 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/08 17:03:39 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/15 17:22:06 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,13 @@ int	get_pivot(t_stack *a, int chunk)
 	return (result->value);
 }
 
-void	push_below_pivot(t_stack *a, t_stack *b, t_node *node)
+void	push_below_pivot(t_stack *a, t_stack *b, t_node *node, int p)
 {
 	int	to_head;
 
 	to_head = dis_to_head(node);
+	// if (to_head == 0)
+	// 	opt_before_push(a, b, p);
 	if (to_head < a->size / 2)
 	{
 		while (to_head)
@@ -77,6 +79,7 @@ void	push_below_pivot(t_stack *a, t_stack *b, t_node *node)
 			to_head--;
 		}
 	}
+	// opt_ss(a, b);
 	push(a, b, 'b');
 }
 
@@ -91,7 +94,7 @@ void	push_chunk(t_stack *a, t_stack *b, int chunk)
 	{
 		if (temp->value <= pivot)
 		{
-			push_below_pivot(a, b, temp);
+			push_below_pivot(a, b, temp, pivot);
 			temp = a->head;
 		}
 		else

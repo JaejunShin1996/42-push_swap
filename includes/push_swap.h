@@ -6,7 +6,7 @@
 /*   By: jaeshin <jaeshin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 15:54:13 by jaeshin           #+#    #+#             */
-/*   Updated: 2023/08/14 11:25:47 by jaeshin          ###   ########.fr       */
+/*   Updated: 2023/08/15 16:44:14 by jaeshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,9 @@ void			reverse_rotate(t_stack *stack, char which);
 void			ss(t_stack *a, t_stack *b);
 void			rr(t_stack *a, t_stack *b);
 void			rrr(t_stack *a, t_stack *b);
+void			opt_ss(t_stack *a, t_stack *b);
+void			opt_rr(t_stack *a, int pivot);
+void			opt_before_push(t_stack *a, t_stack *b, int pivot);
 
 // Free
 void			free_stack(t_stack *stack);
@@ -79,7 +82,7 @@ int				sort_three_case2(t_stack *a);
 void			push_smallest(t_stack *a, t_stack *b);
 t_node			*loop_for_small(t_stack *a, int i);
 int				get_pivot(t_stack *a, int chunk);
-void			push_below_pivot(t_stack *a, t_stack *b, t_node *node);
+void			push_below_pivot(t_stack *a, t_stack *b, t_node *node, int p);
 void			push_chunk(t_stack *a, t_stack *b, int chunk);
 
 // Sort
