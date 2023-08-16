@@ -13,9 +13,11 @@ $(NAME):
 all: $(NAME)
 
 clean:
+	make clean -C libft
 	@rm -f $(NAME)
 
 fclean: clean
+	make fclean -C libft
 
 re: fclean all
 
